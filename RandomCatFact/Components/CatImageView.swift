@@ -12,12 +12,19 @@ struct CatImageView: View {
     
     var body: some View {
         if let url = imageURL {
-            AsyncImage(url: url) { image in
-                image.resizable()
-                    .scaledToFit()
-                    .cornerRadius(15)
-            } placeholder: {
-                ProgressView()
+            AsyncImage(url: url) { phase in
+                switch phase {
+                case .empty:
+                    Image(systemName: "\(AppConstant.tipIconName).fill")
+                        .iconModifier()
+                case .success(let image):
+                    image.imageModifier()
+                case .failure(_):
+                    Image(systemName: "\(AppConstant.tipIconName).fill")
+                        .iconModifier()
+                @unknown default:
+                    ProgressView()
+                }
             }
         }
     }
@@ -25,4 +32,21 @@ struct CatImageView: View {
 
 #Preview {
     CatImageView(imageURL: URL(string: PreviewConstant.catImageURL))
+}
+
+extension Image {
+    func imageModifier() -> some View {
+        self
+            .resizable()
+            .scaledToFit()
+            .cornerRadius(15)
+    }
+    
+    func iconModifier() -> some View {
+        self
+            .imageModifier()
+            .scaledToFit()
+            .frame(width: 100,height: 100)
+            .foregroundColor(.gray)
+    }
 }

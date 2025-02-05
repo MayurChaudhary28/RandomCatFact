@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB4D7E272D5335AE00078E9A /* CustomContentUnavilableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4D7E262D5335AE00078E9A /* CustomContentUnavilableView.swift */; };
 		FB55774E2D51D640007C9816 /* RandomCatFactApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB55774D2D51D640007C9816 /* RandomCatFactApp.swift */; };
 		FB5577502D51D640007C9816 /* CatFactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB55774F2D51D640007C9816 /* CatFactView.swift */; };
 		FB5577522D51D641007C9816 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB5577512D51D641007C9816 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FB4D7E262D5335AE00078E9A /* CustomContentUnavilableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomContentUnavilableView.swift; sourceTree = "<group>"; };
 		FB55774A2D51D640007C9816 /* RandomCatFact.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomCatFact.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB55774D2D51D640007C9816 /* RandomCatFactApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomCatFactApp.swift; sourceTree = "<group>"; };
 		FB55774F2D51D640007C9816 /* CatFactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFactView.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 			children = (
 				FB55778A2D5205E5007C9816 /* CatImageView.swift */,
 				FB55778C2D5205F4007C9816 /* FactView.swift */,
+				FB4D7E262D5335AE00078E9A /* CustomContentUnavilableView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 			files = (
 				FB55777B2D51D701007C9816 /* CatModel.swift in Sources */,
 				FB5577802D51D848007C9816 /* APIService.swift in Sources */,
+				FB4D7E272D5335AE00078E9A /* CustomContentUnavilableView.swift in Sources */,
 				FB5577832D51D8A0007C9816 /* APIConstants.swift in Sources */,
 				FB55778B2D5205E5007C9816 /* CatImageView.swift in Sources */,
 				FB5577862D51E97A007C9816 /* Tip.swift in Sources */,

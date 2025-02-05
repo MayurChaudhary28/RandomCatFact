@@ -17,19 +17,19 @@ struct CatFactView: View {
             GeometryReader { geometry in
                 ScrollView {
                     VStack {
-                        CatImageView(imageURL: viewModel.catImageURL)
+                        CatImageView(imageURL: URL(string: viewModel.catImageURL))
                             .frame(maxWidth: geometry.size.width * 0.9, maxHeight: geometry.size.height * 0.6)
                         FactView(fact: viewModel.catFact)
                             .frame(maxWidth: geometry.size.width * 0.9)
                         
-                        if let errorMessage = viewModel.errorMessage {
-                            Text(errorMessage)
-                                .foregroundColor(.red)
-                                .padding()
-                        }
                     }
                     .frame(width: geometry.size.width)
                 }
+                .overlay(content: {
+                    if let errorMessage = viewModel.errorMessage {
+                        CustomContentUnavilableView(icon: AppConstant.tipIconName, title: AppConstant.errorTitle, description: errorMessage)
+                    }
+                })
                 .contentShape(Rectangle())
                 .onTapGesture {
                     Task {
@@ -41,7 +41,7 @@ struct CatFactView: View {
                 await viewModel.fetchCatData()
             }
             .padding()
-            .navigationTitle("Cat Fact")
+            .navigationTitle(AppConstant.appTitle)
             .navigationBarTitleDisplayMode(.inline)
         }
     }

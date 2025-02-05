@@ -13,7 +13,7 @@ import TipKit
 class CatViewModel: ObservableObject {
     
     //Properties
-    @Published var catImageURL: URL?
+    @Published var catImageURL: String = ""
     @Published var catFact: String = ""
     @Published var errorMessage: String?
     
@@ -35,16 +35,23 @@ class CatViewModel: ObservableObject {
             async let fact = catService.fetchCatFact()
             async let image = catService.fetchCatImage()
             catFact = try await fact
-            catImageURL = try await URL(string: image)
+            catImageURL = try await image
             if !isTipShown {
                 isTipShown = true
                 setUpTips()
             }
         } catch let error as CatServiceError {
             errorMessage = error.localizedDescription
+            clearProperties()
         } catch {
             errorMessage = CatServiceError.unknownError.localizedDescription
+            clearProperties()
         }
+    }
+    
+    private func clearProperties() {
+        catFact = ""
+        catImageURL = ""
     }
     
     // SetUp Tips Method

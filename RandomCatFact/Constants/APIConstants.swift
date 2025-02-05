@@ -15,9 +15,12 @@ struct APIConstants {
 
 // MARK: - App Constants
 struct AppConstant {
+    static let appTitle = "Cat Fact"
     static let tipTitle = "Did you know?"
     static let tipMessage = "Tap anywhere on the screen to see a new cat image and fact!"
     static let tipIconName = "cat.circle"
+    static let errorTitle = "Oops!"
+    static let errorMessage = "Something went wrong"
 }
 
 // MARK: - Preview Constant
