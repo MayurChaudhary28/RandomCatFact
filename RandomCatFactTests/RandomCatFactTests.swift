@@ -30,7 +30,7 @@ final class RandomCatFactTests: XCTestCase {
         
         //Assert
         XCTAssertEqual(viewModel.catFact, PreviewConstant.catFact)
-        XCTAssertEqual(viewModel.catImageURL, URL(string: PreviewConstant.catImageURL))
+        XCTAssertEqual(viewModel.catImageURL, PreviewConstant.catImageURL)
         XCTAssertNil(viewModel.errorMessage)
     }
     
